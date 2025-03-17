@@ -44,7 +44,7 @@ def recognize_speech():
 
 def get_weather(city="New Delhi"):
     """Fetch real-time weather data for a given city"""
-    API_KEY = "1e8bd439beea3af25723412410eee3df"
+    API_KEY = "YOUR_API_KEY"
     URL = f"http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=metric"
     try:
         response = requests.get(URL)
@@ -122,15 +122,15 @@ def open_application(command):
 
 def ai_assistant():
     """Main AI assistant loop"""
-    speak("Hello! Say 'assistant' to activate me.")
+    speak("Hello! Say 'may the force be with you' to activate me.")
     
     while True:
         command = recognize_speech()
         if command is None:
             continue
         
-        if "assistant" in command:
-            speak("Yes, how can I help you?")
+        if "may the force be with you" in command:
+            speak("Hello master, R2D2 reporting")
             
             while True:
                 command = recognize_speech()
